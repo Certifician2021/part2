@@ -1,5 +1,5 @@
 import { useState, useEffect} from 'react'
-import Person from './components/Persons'
+import Persons from './components/Persons'
 import PersonForm from './components/PersonForm'
 import Filter from './components/Filter'
 import Services from './services/persons'
@@ -90,10 +90,10 @@ function App() {
         <Filter submitButton={submitButton} value={newFilter} handleFilter={handleFilter} /><br />
         <Notification message={noti}/>
         <h2>Add new person :</h2>
-        <PersonForm addevent={addevent} newName={newName} newNo={newNo} handleChangename={handleChangename} handleChangeNo={handleChangeNo}   />
+        <PersonForm  addevent={addevent} newName={newName} newNo={newNo} handleChangename={handleChangename} handleChangeNo={handleChangeNo}   />
         <h2>Numbers</h2>
         <div>
-          <ul>{persons.map((x, i) => <Person key={i} name={x.name} id={x.id} no={x.number}/>)} </ul>
+          <ul>{persons.map((x, i) => <Persons setPersons={setPersons} persons={persons} setNoti={setNoti} key={i} name={x.name} id={x.id} no={x.number}/>)} </ul>
         </div>
          
    </div>
